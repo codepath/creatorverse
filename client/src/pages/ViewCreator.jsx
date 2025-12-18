@@ -27,7 +27,7 @@ const ViewCreator = ({data}) => {
     const deleteCreator = async (event) => {
         event.preventDefault();
         const { error } = await supabase
-        .from('creators')
+        .from('creators_2025')
         .delete()
         .eq('id', id) 
 

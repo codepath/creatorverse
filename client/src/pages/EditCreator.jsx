@@ -37,7 +37,7 @@ const EditCreator = ({data}) => {
     const updateCreator = async (event) => {
         event.preventDefault();
         const { error } = await supabase
-        .from('creators')
+        .from('creators_2025')
         .update({ name: creator.name, youtube: creator.youtube, twitter: creator.twitter, instagram: creator.instagram,  description: creator.description, image: creator.image})
         .eq('id', id)
 
@@ -51,7 +51,7 @@ const EditCreator = ({data}) => {
     const deleteCreator = async (event) => {
         event.preventDefault();
         const { error } = await supabase
-        .from('creators')
+        .from('creators_2025')
         .delete()
         .eq('id', id) 
 

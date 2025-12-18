@@ -19,7 +19,7 @@ const AddCreator = () => {
         event.preventDefault()
 
        const { error } = await supabase
-        .from('creators')
+        .from('creators_2025')
         .insert( {name: creator.name, youtube: creator.youtube, twitter: creator.twitter, instagram: creator.instagram, description: creator.description, image: creator.image} )
         .select()
 
