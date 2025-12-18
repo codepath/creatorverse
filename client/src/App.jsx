@@ -15,12 +15,17 @@ const App = () => {
   useEffect(() => {
     
     const fetchCreators = async () => {
-      const {data} = await supabase
+      const {data, error} = await supabase
       .from('creators_2025')
       .select()
       .order('created_at', { ascending: true })
 
-      setCreators(data)
+      if (error) {
+        console.error("Error fetching creators:", error);
+        console.log("Error details:", error.message, error.details, error.hint);
+      } else {
+        setCreators(data)
+      }
     }
 
     fetchCreators()
