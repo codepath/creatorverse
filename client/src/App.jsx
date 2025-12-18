@@ -16,7 +16,7 @@ const App = () => {
     
     const fetchCreators = async () => {
       const {data} = await supabase
-      .from('creators')
+      .from('creators_2025')
       .select()
       .order('created_at', { ascending: true })
 
